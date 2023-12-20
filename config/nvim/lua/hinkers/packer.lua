@@ -71,4 +71,7 @@ return require('packer').startup(function(use)
     -- Auto (un)commenting
     use('numToStr/Comment.nvim')
 
+    -- Bullet Journal
+    use('vuciv/vim-bujo')
+
 end)

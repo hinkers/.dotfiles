@@ -1,3 +1,3 @@
 #!/usr/bin/bash
 
-cp -r .config/ ~/
+cp -r config/* ~/.config

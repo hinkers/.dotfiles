@@ -1,4 +1,3 @@
-vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex, { desc = "Open netrw" })
@@ -12,7 +11,7 @@ vim.keymap.set("n", "<C-u>", "<C-u>zz", { desc = "Scroll up and center" })
 vim.keymap.set("n", "n", "nzzzv", { desc = "Next search result, centered" })
 vim.keymap.set("n", "N", "Nzzzv", { desc = "Previous search result, centered" })
 
-vim.keymap.set("x", "<leader>p", [["_dP]], { desc = "Paste in visual mode without yanking" })
+vim.keymap.set("x", "<leader>P", [["_dP]], { desc = "Paste in visual mode without yanking" })
 
 vim.keymap.set({"n", "v"}, "<leader>y", [["+y]], { desc = "Yank to clipboard" })
 vim.keymap.set("n", "<leader>Y", [["+Y]], { desc = "Yank line to clipboard" })
@@ -32,4 +31,20 @@ vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><
 vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true, desc = "Make file executable" })
 
 vim.keymap.set("n", "<leader><leader>", function() vim.cmd("so") end, { desc = "Source current file" })
+
+vim.keymap.set("n", "<leader>fw", "<cmd>%s/\\r//g<CR>", { desc = "Remove '\\r'" })
+
+vim.keymap.set("n", "<leader>gp", function()
+  local save_pos = vim.api.nvim_win_get_cursor(0)
+  vim.cmd 'normal! ggVG"_d"+PGdd'
+  pcall(vim.cmd, '%s/\\r//ge')
+  vim.api.nvim_win_set_cursor(0, save_pos)
+end, { desc = "Replace whole file with clipboard" })
+
+vim.keymap.set("n", "<leader>gy", function()
+  local save_pos = vim.api.nvim_win_get_cursor(0)
+  vim.cmd("normal! 1G0vG$")
+  vim.cmd("normal! \"+y")
+  vim.api.nvim_win_set_cursor(0, save_pos)
+end, { desc = "Yank whole file into clipboard" })
 
