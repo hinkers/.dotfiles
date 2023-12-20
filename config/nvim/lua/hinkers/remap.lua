@@ -1,6 +1,6 @@
 vim.g.maplocalleader = " "
 
-vim.keymap.set("n", "<leader>pv", vim.cmd.Ex, { desc = "Open netrw" })
+vim.keymap.set("n", "<leader>pv", ":Ex", { desc = "Open netrw" })
 
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv", { desc = "Move text down in visual mode" })
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv", { desc = "Move text up in visual mode" })
@@ -34,17 +34,6 @@ vim.keymap.set("n", "<leader><leader>", function() vim.cmd("so") end, { desc = "
 
 vim.keymap.set("n", "<leader>fw", "<cmd>%s/\\r//g<CR>", { desc = "Remove '\\r'" })
 
-vim.keymap.set("n", "<leader>gp", function()
-  local save_pos = vim.api.nvim_win_get_cursor(0)
-  vim.cmd 'normal! ggVG"_d"+PGdd'
-  pcall(vim.cmd, '%s/\\r//ge')
-  vim.api.nvim_win_set_cursor(0, save_pos)
-end, { desc = "Replace whole file with clipboard" })
-
-vim.keymap.set("n", "<leader>gy", function()
-  local save_pos = vim.api.nvim_win_get_cursor(0)
-  vim.cmd("normal! 1G0vG$")
-  vim.cmd("normal! \"+y")
-  vim.api.nvim_win_set_cursor(0, save_pos)
-end, { desc = "Yank whole file into clipboard" })
+vim.keymap.set("n", "<leader>gp", "ggVG\"_d\"+P", { desc = "Replace whole file with clipboard" })
+vim.keymap.set("n", "<leader>gy", "ggVG\"+Y", { desc = "Yank whole file into clipboard" })
 
