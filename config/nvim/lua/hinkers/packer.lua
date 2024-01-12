@@ -15,7 +15,7 @@ return require('packer').startup(function(use)
     }
 
     -- Color theme
-    use({ 'rose-pine/neovim', as = 'rose-pine' })
+    use 'Mofiqul/dracula.nvim'
 
     -- Syntax highlighting
     use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
@@ -71,7 +71,9 @@ return require('packer').startup(function(use)
     -- Auto (un)commenting
     use('numToStr/Comment.nvim')
 
-    -- Bullet Journal
-    use('vuciv/vim-bujo')
+    -- TODO list
+    -- use('vuciv/vim-bujo')
+    use('hinkers/neotasks')
 
 end)
+
