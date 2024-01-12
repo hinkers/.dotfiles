@@ -16,7 +16,7 @@ The first run of neovim will likely result in errors make sure to run PackerSync
 
 ## Windows Neovim Installation
 
-Install [sccop](https://scoop.sh/):
+Install [scoop](https://scoop.sh/):
 
 ```powershell
 Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
