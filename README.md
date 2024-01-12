@@ -32,7 +32,7 @@ scoop install neovim
 Then finally apply the config:
 
 ```powershell
-git clone https://github.com/hinkers/.dotfiles.git; cd .dotfiles && .\update.bat
+git clone https://github.com/hinkers/.dotfiles.git; cd .dotfiles; .\update.bat
 ```
 
 The first run of neovim will likely result in errors make sure to run PackerSync to fix these.
