@@ -71,9 +71,9 @@ return require('packer').startup(function(use)
     -- Auto (un)commenting
     use('numToStr/Comment.nvim')
 
-    -- TODO list
-    -- use('vuciv/vim-bujo')
+    -- My plugins
     use('hinkers/neotasks')
+    use('hinkers/nvim-cheatsheet')
 
 end)
 
