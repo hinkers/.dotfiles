@@ -31,6 +31,9 @@ return require('packer').startup(function(use)
     use('tpope/vim-fugitive')
     use('lewis6991/gitsigns.nvim')
 
+    -- File explorer
+    use('stevearc/oil.nvim')
+
     -- Language Server Protocol
     use {
         'VonHeikemen/lsp-zero.nvim',
