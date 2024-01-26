@@ -56,8 +56,8 @@ fi
 cp -r config/* ~/.config
 cp profile/.tmux.conf ~
 sudo cp sddm/sddm.conf /etc
-sudo cp sddm/theme.conf /usr/share/sddm/theme/sugar-candy
-sudo cp images/background.jpg /usr/share/sddm/theme/sugar-candy/Backgrounds
+sudo cp sddm/theme.conf /usr/share/sddm/themes/sugar-candy
+sudo cp images/background.jpg /usr/share/sddm/themes/sugar-candy/Backgrounds
 
 # Fix ownership (broken by sudo)
 sudo chown -R root:root /usr/share/sddm/themes/sugar-candy
