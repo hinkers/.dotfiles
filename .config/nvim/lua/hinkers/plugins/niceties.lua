@@ -32,14 +32,14 @@ return {
     {
         -- Undo branching
         "mbbill/undotree",
-        config = function(),
+        config = function()
             vim.keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle)
         end,
     },
     {
         -- Highlight other instances of the word under the cursor
         "RRethy/vim-illuminate",
-        event = "LazyFile",
+        lazy = false,
         opts = {
             delay = 200,
             large_file_cutoff = 2000,
@@ -47,8 +47,8 @@ return {
                 providers = { "lsp" },
             },
         },
-        config = function(_, opts)
-            require("illuminate").configure(opts)
+        config = function()
+            require("illuminate").configure()
 
             local function map(key, dir, buffer)
                 vim.keymap.set("n", key, function()
