@@ -21,6 +21,7 @@ _darcs
 ^/LICENSE.*
 ^/COPYING
 
-scripts/
-sddm/
-images/
+# Manually added
+^/scripts/*
+^/sddm/*
+^/images/*
