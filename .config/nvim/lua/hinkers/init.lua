@@ -14,4 +14,9 @@ vim.opt.rtp:prepend(lazypath)
 require("hinkers.remap")
 require("hinkers.set")
 
-require("lazy").setup("hinkers.plugins")
+require("lazy").setup("hinkers.plugins", {
+    dev = {
+        path = "~/Repos",
+        fallback = true,
+    },
+})
